@@ -1,0 +1,136 @@
+body{
+  height: auto;
+}
+
+h5 {
+  text-align: center !important;
+  size: 7px !important;
+  vertical-align:bottom !important;
+  margin:0px 0px 0px 0px !important;
+
+  font-weight: normal;
+  letter-spacing: 2px !important;
+  font-size: 16px !important;
+}
+
+
+
+.nextPage {
+  position: absolute;
+  margin-top: 30px;
+
+  width:30px;
+  bottom: 0px;
+  right: 0px;
+
+  size: 1.21rem;
+}
+
+
+.musicButton {
+  margin: 20px 10px 20px 10px;	
+
+
+  -webkit-box-shadow: 0px 8px 14px -5px rgba(0,0,0,0.7); 
+  box-shadow: 0px 8px 14px -5px rgba(0,0,0,0.7);
+
+  --webkit-box-shadow: 0px 8px 14px -5px rgba(0,0,0,0.4); 
+  box-shadow: 0px 8px 14px -5px rgba(0,0,0,0.4);
+
+  Height:115px;
+  width: 115px;
+
+  background-color: white !important;
+  border-width: 2px !important;
+  border-color: black !important;
+  border-radius: 10px !important;
+}
+
+.musicButton:focus {
+	-webkit-box-shadow: 0px 8px 14px -5px rgba(0,0,0,0.7) !important; 
+  box-shadow: 0px 8px 14px -5px rgba(0,0,0,0.7) !important;
+
+}
+
+.musicButton:hover {
+  transform: translateY(-3px) scale(1.005);
+  transition: transform 0.3s ease-in-out !important;
+
+  -webkit-box-shadow: 0px 8px 14px -5px rgba(0,0,0,0.7); 
+  box-shadow: 0px 8px 14px -5px rgba(0,0,0,0.7);
+  transition: box-shadow 0.2s ease-in-out !important;
+
+}
+
+.ripple {
+  position: absolute;
+  background: #A9A9A9;
+  border-radius: 50%;
+  width: 4px;
+  height: 4px;
+  animation: rippleEffect .88s 1;
+  opacity: 0;
+  z-index: 5000;
+}
+
+@keyframes rippleEffect {
+  0% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(60);
+    opacity: 0;
+  }
+}
+
+
+@keyframes hashtagOne {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+#up-vertical-line {
+  stroke-dasharray:  500;
+  stroke-dashoffset: 500;
+  animation: hashtagOne .2s linear forwards .3s;
+}
+
+#down-vertical-line {
+  stroke-dasharray:  500;
+  stroke-dashoffset: 500;
+  animation: hashtagOne .2s linear forwards .6s;
+}
+
+#left-horizontal-line {
+  stroke-dasharray:  500;
+  stroke-dashoffset: 500;
+  animation: hashtagOne .2s linear forwards 0.9s;
+}
+
+#right-horizontal-line {
+  stroke-dasharray:  500;
+  stroke-dashoffset: 500;
+  animation: hashtagOne .2s linear forwards 1.2s;
+}
+
+#one-1 {
+  stroke-dasharray:  500;
+  stroke-dashoffset: 500;
+  animation: hashtagOne .2s linear forwards 1.5s;
+}
+
+#one-2 {
+  stroke-dasharray:  500;
+  stroke-dashoffset: 500;
+  animation: hashtagOne .2s linear forwards 1.8s;
+}
+
+#one-3 {
+  stroke-dasharray:  500;
+  stroke-dashoffset: 500;
+  animation: hashtagOne .2s linear forwards 2.1s;
+}
+
+
