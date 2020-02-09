@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>shiftCheckboxes</title>
+</head>
+<style>
+	body{
+		margin:0;
+		height: 100%;
+
+		background-color: #343a40;
+
+		font-family:'Lilly brush';
+		font-size: 20px;
+		font-weight: 200;
+
+		-moz-appearance:none;
+		-webkit-appearance:none;
+		-o-appearance:none;
+	}
+
+	.container {
+		display:block;
+
+		background-color: white;
+
+		width:350px;
+		height:auto;
+
+		margin-left:auto;
+		margin-right:auto;
+		margin-top: 10%;
+
+		border-radius: 5px;
+	}	
+
+	.container .item:last-child {
+		border-bottom-style: none;
+	}
+
+
+	.item {
+		display: flex;
+		flex-direction: row;
+
+		height: 50px;
+
+		border-bottom-style: solid;
+		border-bottom-color:#F5F5F5;
+		border-bottom-width:1.5px;
+
+	}
+
+
+	input[type="checkbox"] {
+		flex:1;
+
+		margin: auto;
+
+		background-color:maroon;
+
+	}
+	input[type="checkbox"]:focus {
+		outline: none;
+	}
+
+	input[type="checkbox"]:checked + p {
+		text-decoration-line:line-through; 
+	}
+
+	.text {
+		flex:5;
+		margin: 0;
+		text-align: center;
+
+		margin: auto;
+
+		border-left-style: solid;
+		border-left-color:#F2F2F2;
+		border-left-width:1px;
+
+	}
+
+
+</style>
+
+<body>
+
+	<div id="list" class="container">
+		<div class="item">
+			<input id="1" type="checkbox">
+			<p class="text">Clean dishes</p>
+		</div>
+		<div class="item">
+			<input id="2" type="checkbox">
+			<p class="text">do homework</p>
+		</div>
+		<div class="item">
+			<input id="3" type="checkbox">
+			<p class="text">finsh project 5 blease :(</p>
+		</div>
+		<div class="item">
+			<input id="4" type="checkbox">
+			<p class="text">book appointment with advisor</p>
+		</div>
+		<div class="item">
+			<input id="5" type="checkbox">
+			<p class="text">play volleyball</p>
+		</div>
+		<div class="item">
+			<input id="6" type="checkbox">
+			<p class="text">blah blah blah</p>
+		</div>
+		<div class="item">
+			<input id="7" type="checkbox">
+			<p class="text">idk man just do something</p>
+		</div>
+		<div class="item">
+			<input id="8" type="checkbox">
+			<p class="text">go to sleep</p>
+		</div>
+	</div>
+</body>
+
+
+<script>
+	
+	const boxes = document.querySelectorAll(`input[type="checkbox"]`);
+	console.log(boxes);
+	let isShiftDown = false;
+	let startingBox = null;
+	let endBox = null;
+
+	window.addEventListener('keydown', (e) => {
+		e.keyCode === 16 ? isShiftDown = true: isShiftDown = false;
+	});
+
+	window.addEventListener('keyup', (e) =>  {
+		e.keyCode === 16 ? isShiftDown = false: isShiftDown = true;
+	});
+
+	boxes.forEach((box) => box.addEventListener('click', (e) => {
+		if(isShiftDown && startingBox == null){
+			startingBox = box;
+		} else if(isShiftDown && startingBox != null){
+			endBox = box;
+			boxChecker(startingBox, endBox);
+		} else if(isShiftDown && startingBox == box ){
+			startingBox = null;
+			endBox = null;
+
+		}
+	}));
+
+	function boxChecker(start, end){
+		console.log(start.id);
+		console.log(end.id);
+		if(start.id < end.id){
+			for(let i = start.id - 1; i < end.id - 1 ; i++){
+				boxes[i].checked = true;
+			}
+			startingBox = null;
+			endBox = null;
+		} else {
+			for(let i = end.id - 1; i < start.id - 1 ; i++){
+				boxes[i].checked = true;
+			}
+			startingBox = null;
+			endBox = null;
+		}
+		
+
+	}
+
+</script>
+</html>

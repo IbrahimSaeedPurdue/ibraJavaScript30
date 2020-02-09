@@ -1,0 +1,47 @@
+body {
+    margin:0;
+    min-height: 100vh;
+
+    color: white;
+    background-color: #909090;
+}
+
+.navBar {
+    position: relative;
+
+
+    display: flex;
+
+    padding-top: 20px;
+    padding-bottom:20px;
+    background-color: #CD5C5C;
+}
+
+.navBar > .logo {
+    flex:3;
+    padding-left: 5%;
+
+    font-family: 'Lilly brush';
+}
+
+.navBar > .navItem {
+    flex:1;
+    margin: 0;
+}
+
+.navBar > .navItem a {
+    margin-top:auto;
+    margin-bottom:auto;
+z-index:2;
+}
+
+.hl {
+    background-color: black;
+    transition: all 0.7s;
+
+    border-radius: 10px;
+
+    margin: 0;
+    position: absolute;
+    z-index:1;
+}
